@@ -21,18 +21,18 @@ const ProjectsSection = () => {
     {
       id: "CashFit",
       title: "CashFit",
-      subtitle: "사용자 금융 상품 추천 웹 애플리케이션",
-      description: "사용자의 재무 상태와 목표에 맞는 최적의 금융 상품을 추천하는 웹 애플리케이션입니다. 사용자 친화적인 UI/UX로 복잡한 금융 정보를 쉽게 이해할 수 있도록 설계했습니다.",
+      subtitle: "사용자 금융상품 추천 웹 어플리케이션",
+      description:
+        "다양한 금융상품(예/적금, 주식, 코인)을 사용자에게 추천하는 웹 애플리케이션입니다. 사용자는 추천받은 상품에 대한 의견을 나눌 수 있는 커뮤니티 게시판을 이용할 수 있으며, 각 상품에 대한 코멘트 작성이 가능합니다. AI 기반 맞춤형 금융 상품 추천과 직관적인 UI를 통해 금융 정보에 쉽게 접근할 수 있습니다.",
       image: "./assets/cashfit.png",
-      tech: ["Vue.js", "Django", "SQLite", "REST API"],
-      features: ["사용자 재무 상태 분석", "맞춤형 금융 상품 추천 알고리즘", "실시간 금융 상품 정보 업데이트", "직관적인 대시보드"],
+      tech: ["Vue.js", "JavaScript", "Django", "Python", "SQLite", "REST API"],
+      features: ["금융 상품 추천(예/적금, 주식, 코인)", "커뮤니티 게시판 및 댓글 기능", "로그인/회원가입 시스템", "환율 계산기", "좋아요 기능", "AI 기반 추천/검색 서비스", "상품 그래프 시각화"],
       techReason:
-        "프론트엔드에 Vue.js를 선택한 이유는 빠른 프로토타이핑과 직관적인 상태 관리가 가능하기 때문입니다. 백엔드로는 Django를 사용해 강력한 ORM과 관리자 패널을 활용하여 금융 데이터를 효율적으로 관리할 수 있었습니다. PostgreSQL은 복잡한 금융 데이터 관계를 처리하는 데 적합한 강력한 관계형 데이터베이스로 채택했습니다.",
+        "프론트엔드는 Vue.js와 JavaScript를 사용하여 반응형 사용자 인터페이스를 구현했으며, 백엔드로는 Django와 Python을 활용해 빠른 개발과 안정적인 API를 구축했습니다. 데이터베이스는 SQLite를 사용하여 금융 데이터를 효율적으로 관리했으며, REST API를 통해 프론트엔드와 백엔드 간의 원활한 통신을 구현했습니다.",
       period: "2024.10 ~ 2024.11",
-      role: "프론트엔드 개발, 금융 데이터 분석 알고리즘 설계",
+      role: "팀장, 프론트엔드 총괄",
       links: {
         github: "https://github.com/",
-        live: "https://example.com/",
       },
     },
     {
@@ -47,10 +47,9 @@ const ProjectsSection = () => {
       techReason:
         "클라이언트는 Kotlin으로 개발하여 안드로이드 앱의 안정성과 간결한 코드 작성이 가능했습니다. Retrofit2와 OKHTTP3로 효율적인 네트워크 통신을 구현했으며, Glide를 통해 이미지 로딩을 최적화했습니다. 의존성 주입에는 Hilt를 활용하여 코드의 유지보수성을 향상시켰습니다. 서버 측에서는 Spring Boot와 Java를 기반으로 안정적인 API를 구축했으며, MySQL로 관계형 데이터를 관리하고 Firebase를 통해 실시간 데이터 동기화와 푸시 알림 기능을 구현했습니다. JWT와 Spring Security를 적용하여 안전한 사용자 인증 시스템을 제공합니다.",
       period: "2025.01 ~ 2025.02",
-      role: "안드로이드 개발, 백엔드 API 설계, 위치 기반 서비스 구현",
+      role: "안드로이드 개발 총괄, 깃 총괄",
       links: {
         github: "https://github.com/",
-        live: "https://example.com/",
       },
     },
     {
@@ -68,7 +67,6 @@ const ProjectsSection = () => {
       role: "프론트엔드 개발, 게이미피케이션 요소 설계, 데이터 시각화",
       links: {
         github: "https://github.com/",
-        live: "https://example.com/",
       },
     },
     {
@@ -83,10 +81,9 @@ const ProjectsSection = () => {
       techReason:
         "클라이언트 측 얼굴 인식과 분석을 위해 React.js와 OpenCV 를 선택했습니다. 이를 통해 사용자 브라우저에서 직접 얼굴 분석이 가능해 개인정보 보호와 실시간 상호작용을 개선했습니다. 백엔드는 Spring Boot를 통해 확장 가능한 마이크로서비스 아키텍처를 구현했으며, PostgreSQL은은 다양한 헤어스타일 데이터와 사용자 프로필을 유연하게 저장하기 위해 선택했습니다. AWS 클라우드 서비스를 활용해 이미지 처리와 머신러닝 모델 배포를 효율적으로 관리하고 있습니다.",
       period: "2025.04 ~ 현재 진행중",
-      role: "프론트엔드 개발, 머신러닝 모델 통합, 클라우드 인프라 구축",
+      role: "팀장, 프론트 엔드 총괄",
       links: {
         github: "https://github.com/",
-        live: "https://example.com/",
       },
     },
   ];
@@ -244,10 +241,6 @@ const ProjectsSection = () => {
                       <a href={selectedProject.links.github} target="_blank" rel="noopener noreferrer" className="action-link github">
                         <img src="./assets/github_icon.png" alt="GitHub" />
                         GitHub
-                      </a>
-                      <a href={selectedProject.links.live} target="_blank" rel="noopener noreferrer" className="action-link demo">
-                        <img src="./assets/notion_icon.png" alt="Live Demo" />
-                        Live Demo
                       </a>
                     </motion.div>
                   </div>

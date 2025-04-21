@@ -75,10 +75,10 @@ const AboutSection = () => {
   return (
     <section id="about" className="section dark-section">
       <div className="container">
-        <motion.div className="about-content" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeIn}>
+        <motion.div className="about-content" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} variants={fadeIn}>
           <div className="about-text-container">
             <div className="question-container" ref={textRefs.first}>
-              <motion.h2 className="question" variants={fadeIn}>
+              <motion.h2 className="question impact-question" variants={fadeIn}>
                 Q. React.js를 주력 프레임워크로 선택한 이유
               </motion.h2>
               <motion.p className="answer" variants={fadeIn}>
@@ -89,11 +89,11 @@ const AboutSection = () => {
             </div>
 
             <div className="question-container" ref={textRefs.second}>
-              <motion.h2 className="question highlight-question" variants={fadeIn}>
+              <motion.h2 className="question impact-question" variants={fadeIn}>
                 Q. 프론트엔드 개발에서 중요하게 생각하는 가치
               </motion.h2>
-              <motion.p className="answer highlight-answer" variants={fadeIn}>
-                확장 가능한 아키텍처 설계와 사용자 중심 개발을 중요시합니다. <AnimatedText text="TypeScript를 도입한 이유" className="emphasis-text" />도 코드의 안정성과 유지보수성 향상
+              <motion.p className="answer" variants={fadeIn}>
+                확장 가능한 아키텍처 설계와 사용자 중심 개발을 중요시합니다. <AnimatedText text="TypeScript를 도입한 이유" className="highlight-text" />도 코드의 안정성과 유지보수성 향상
                 때문이었습니다. JS만으로 프로젝트를 진행하면서 타입 오류와 예측 불가능한 동작으로 인한 디버깅의 어려움을 경험했고, 이를 TS로 해결했습니다. 또한 Chrome Lighthouse를 활용한 성능 최적화와
                 접근성 개선에 집중하며, 다양한 사용자들이 불편함 없이 서비스를 이용할 수 있도록 노력합니다.
               </motion.p>
@@ -108,8 +108,14 @@ const AboutSection = () => {
                 Kotlin은 큰 도전이었습니다. 첫 2주간 밤샘 학습과 샘플 앱 개발을 병행하며 기본기를 닦았고, 특히{" "}
                 <AnimatedText text="널 안전성(Null Safety)과 Retrofit을 활용한 API 통신" className="emphasis-text" />에 집중했습니다. 가장 어려웠던 부분은{" "}
                 <AnimatedText text="소셜 로그인 구현" className="highlight-text" />
-                이었습니다. OAuth 인증 흐름을 Kotlin으로 처리하고 JWT 토큰을 관리하는 과정에서 여러 오류와 마주쳤습니다. 팀원들이 백엔드에 집중하는 동안, 저는 공식 문서와 스택오버플로우를 참고하며
-                문제를 해결했고, 결국 <AnimatedText text="4주 만에 클라이언트 기능 50% 이상을 개발" className="emphasis-text" />
+                이었습니다. 웹과 안드로이드의 OAuth 인증 흐름에는 큰 차이가 있었습니다. 웹에서는 단순히 인가 코드를 백엔드로 전달하고 액세스 토큰을 받아오는 구조였지만, 안드로이드에서는 클라이언트가
+                직접 소셜 서비스와 통신하여
+                <AnimatedText text="사용자 프로필과 토큰 데이터를 처리" className="emphasis-text" />
+                해야 했습니다. 이 과정에서 <AnimatedText text="WebView 상태 관리와 토큰 저장" className="highlight-text" />에 어려움을 겪었고, 특히 로그인 상태 유지를 위한 토큰 관리 로직이 웹과는
+                완전히 달라서 적응하는데 시간이 필요했습니다. 팀원들이 백엔드에 집중하는 동안, 저는 Android 공식 문서를 참고하며
+                <AnimatedText text="SharedPreferences를 활용한 안전한 토큰 저장" className="highlight-text" />과 데이터 전달 로직을 구현했습니다. 이 과정에서 모바일 환경에서의 보안 처리와 사용자 경험
+                최적화에 대해 깊이 이해하게 되었고,
+                <AnimatedText text="4주 만에 클라이언트 기능 50% 이상을 개발" className="emphasis-text" />
                 하는 성과를 달성했습니다. 특히 학생용과 교사용 앱을 모두 개발하면서 UI 컴포넌트의 재사용성에 대해 깊이 고민했습니다.
                 <AnimatedText text="RecyclerView와 Fragment" className="highlight-text" />를 활용해 복잡한 화면 구조를 설계하고, MVVM 디자인 패턴을 적용해 비즈니스 로직과 UI를 분리했습니다. 이 경험은
                 이후 React 프로젝트에서 컴포넌트 설계 방식에 큰 영향을 미쳤고, 새로운 기술을 빠르게 습득하고 실무에 적용하는 자신감을 갖게 되었습니다.

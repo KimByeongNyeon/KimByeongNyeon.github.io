@@ -32,6 +32,8 @@ const ExperienceSection = () => {
         "프로젝트 구조화(Smart-dumb-component) 패턴 도입 및 훅 계층화",
         "도메인별 훅 분리 및 전역적으로 사용할 공통 훅 작성(API, STOMP 연결 등)",
         "서버와의 모든 API 통신 연결 구현",
+        "채팅 기능 개발",
+        "이미지 최적화 기법 적용",
         "STOMP + API를 통한 실시간 방 관리 기능 개발",
       ],
       tech: ["React.js", "Spring Boot", "TypeScript", "STOMP"],

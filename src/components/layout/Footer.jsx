@@ -42,9 +42,9 @@ const Footer = () => {
       <div className="container">
         <motion.div className="footer-content" variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
           <motion.div className="footer-info" variants={fadeInUp}>
-            <h3 className="footer-logo">개발자 포트폴리오</h3>
+            <h3 className="footer-logo">김병년</h3>
             <p className="footer-tagline">새로운 도전을 두려워하지 않는 개발자</p>
-            <p className="footer-desc">React, TypeScript, Kotlin에 능숙한 프론트엔드 개발자입니다. 사용자 중심 설계와 최적화된 코드 작성에 집중합니다.</p>
+            <p className="footer-desc">React, TypeScript, Vue.js에 능숙한 프론트엔드 개발자입니다. 사용자 중심 설계와 최적화된 코드 작성에 집중합니다.</p>
           </motion.div>
 
           <motion.div className="footer-links-container" variants={fadeInUp}>
@@ -101,17 +101,6 @@ const Footer = () => {
               ))}
             </div>
           </motion.div>
-        </motion.div>
-
-        <motion.div className="footer-bottom" variants={fadeInUp} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
-          <div className="copyright">
-            <p>&copy; {currentYear} 포트폴리오. All Rights Reserved.</p>
-          </div>
-          <div className="footer-legal">
-            <a href="#">개인정보처리방침</a>
-            <span className="divider">|</span>
-            <a href="#">이용약관</a>
-          </div>
         </motion.div>
       </div>
     </footer>

@@ -10,16 +10,28 @@ class Animation {
   static initSmoothScroll() {
     const lenis = new Lenis({
       duration: 1.2,
-      smoothTouch: true,
+      smoothTouch: false, // 터치 스크롤 비활성화
+      smoothWheel: false, // 휠 스무스 스크롤 비활성화
+      wheelMultiplier: 1.0,
+      infinite: false,
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      normalize: false,
+      syncTouch: false, // 터치 동기화 비활성화
+      syncTouchLerp: 0.1, // 터치 러프 값 낮게 설정
+      touchInertiaMultiplier: 35, // 터치 관성 낮게 설정
+      touchMultiplier: 2, // 터치 배율 낮게 설정
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // GSAP ScrollTrigger와 Lenis 연동
+    lenis.on("scroll", ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     return lenis;
   }
@@ -61,18 +73,47 @@ class Animation {
         );
       }
 
-      // 스크롤 이벤트에 따른 헤더 변경
+      // 헤더가 항상 고정되도록 설정
       const header = document.querySelector("#header");
       if (header) {
-        ScrollTrigger.create({
-          start: "top -80",
-          onEnter: () => {
-            header.classList.add("scrolled");
-          },
-          onLeaveBack: () => {
-            header.classList.remove("scrolled");
-          },
-        });
+        header.style.cssText = `
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          z-index: 2000 !important;
+          background-color: rgba(255, 255, 255, 0.95) !important;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+          padding: 15px 0 !important;
+          transform: translateZ(0) !important;
+          -webkit-transform: translateZ(0) !important;
+          will-change: transform !important;
+          backface-visibility: hidden !important;
+          -webkit-backface-visibility: hidden !important;
+        `;
+
+        // 스크롤 이벤트 리스너 추가
+        const handleScroll = () => {
+          requestAnimationFrame(() => {
+            header.style.cssText = `
+              position: fixed !important;
+              top: 0 !important;
+              left: 0 !important;
+              width: 100% !important;
+              z-index: 2000 !important;
+              background-color: rgba(255, 255, 255, 0.95) !important;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+              padding: 15px 0 !important;
+              transform: translateZ(0) !important;
+              -webkit-transform: translateZ(0) !important;
+              will-change: transform !important;
+              backface-visibility: hidden !important;
+              -webkit-backface-visibility: hidden !important;
+            `;
+          });
+        };
+
+        window.addEventListener("scroll", handleScroll);
       }
     },
 
@@ -138,6 +179,27 @@ class Animation {
     scrollProgress: () => {
       const progressBar = document.querySelector(".scroll_progress");
       if (!progressBar) return;
+
+      // 프로그레스 컴포넌트가 고정되도록 설정
+      const progress = document.getElementById("progress");
+      if (progress) {
+        progress.style.cssText = `
+          position: fixed !important;
+          top: 0 !important;
+          bottom: 0 !important;
+          right: 20px !important;
+          width: 3px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          z-index: 1999 !important;
+          height: 100vh !important;
+          padding: 20px 0 !important;
+          pointer-events: none !important;
+          opacity: 1 !important;
+        `;
+      }
 
       window.addEventListener("scroll", () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
