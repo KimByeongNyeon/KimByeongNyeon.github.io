@@ -64,8 +64,9 @@ function App() {
     <Router>
       <Main>
         <IntroSection />
-        <AboutSection />
+
         <SkillsSection />
+        <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
       </Main>
