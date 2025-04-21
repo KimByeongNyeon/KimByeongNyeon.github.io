@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/my-portfolio/assets/my_favicon-DThYZnms.png" />
+    <link rel="icon" type="image/png" href="/my-portfolio/assets/my_favicon.DThYZnms.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="개발자 포트폴리오 웹사이트입니다" />
     <meta name="keywords" content="개발자, 포트폴리오, 프로젝트" />
@@ -11,14 +11,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <title>개발자 포트폴리오</title>
+    <!-- GitHub Pages SPA 리디렉션 -->
+    <script type="text/javascript">
+      // 404 리디렉션 처리 스크립트
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <style>
       body {
         background-color: #f5f5f5;
         font-family: "Noto Sans KR", sans-serif;
       }
     </style>
-    <script type="module" crossorigin src="/my-portfolio/assets/main-BJvR-FIu.js"></script>
-    <link rel="stylesheet" crossorigin href="/my-portfolio/assets/main-BDNsHdQ-.css">
+    <script type="module" crossorigin src="/my-portfolio/assets/main.DoaeeQd8.js"></script>
+    <link rel="stylesheet" crossorigin href="/my-portfolio/assets/main.BDNsHdQ-.css">
   </head>
   <body>
     <div id="root"></div>
