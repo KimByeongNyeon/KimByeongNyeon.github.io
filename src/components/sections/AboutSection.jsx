@@ -143,7 +143,7 @@ const AboutSection = () => {
                   <motion.a href="https://github.com/KimByeongNyeon" className="link-button" whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 255, 157, 0.4)" }} whileTap={{ scale: 0.95 }}>
                     깃허브
                   </motion.a>
-                  <motion.a href="https://kimbyeongnyeon.github.io/" className="link-button" whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 255, 157, 0.4)" }} whileTap={{ scale: 0.95 }}>
+                  <motion.a href="https://KimByeongNyeon.github.io/" className="link-button" whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 255, 157, 0.4)" }} whileTap={{ scale: 0.95 }}>
                     포트폴리오
                   </motion.a>
                 </div>

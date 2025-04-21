@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://KimByeongNyeon.github.io/my-portfolio",
+  "homepage": "https://KimByeongNyeon.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
