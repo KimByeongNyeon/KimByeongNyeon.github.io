@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { resolve } from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
       jsxRuntime: "automatic",
     }),
   ],
-  base: "/my-portfolio/",
+  base: "./",
   build: {
     outDir: "dist",
     target: "es2015",
@@ -17,9 +18,12 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        main: "./index.html",
+        main: resolve(__dirname, "index.html"),
       },
       output: {
+        entryFileNames: "assets/[name].[hash].js",
+        chunkFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash].[ext]",
         manualChunks: undefined,
       },
     },
