@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { getAssetPath } from "./utils/assetUtils";
 
 // 레이아웃 컴포넌트

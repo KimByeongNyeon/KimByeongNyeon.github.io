@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import Animation from "../utils/animation";
-import MarqueeComponent from "../common/MarqueeComponent";
 
 const Header = () => {
   const refMarquee = useRef(null);
