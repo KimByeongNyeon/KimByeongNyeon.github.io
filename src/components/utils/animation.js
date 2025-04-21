@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger, MotionPathPlugin, CSSPlugin } from "gsap/all";
 import Lenis from "lenis";
+import { getAssetPath } from "../../utils/assetUtils";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
 

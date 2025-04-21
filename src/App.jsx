@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { getAssetPath } from "./utils/assetUtils";
 
 // 레이아웃 컴포넌트
 import Header from "./components/layout/Header";
@@ -27,6 +28,9 @@ function App() {
   useEffect(() => {
     // 스무스 스크롤 초기화
     const lenis = Animation.initSmoothScroll();
+
+    // 에셋 경로 확인 (디버깅용)
+    console.log("백그라운드 이미지 경로:", getAssetPath("assets/backgroud.jpg"));
 
     return () => {
       // 클린업
