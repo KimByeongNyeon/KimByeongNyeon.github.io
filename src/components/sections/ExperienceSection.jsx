@@ -39,7 +39,7 @@ const ExperienceSection = () => {
       tech: ["React.js", "TypeScript", "STOMP", "pixi.js"],
     },
     {
-      title: "4차 프로젝트 - 개인 얼굴형 분석 및 추천 헤어스타일 플랫폼폼",
+      title: "4차 프로젝트 - 개인 얼굴형 분석 및 추천 헤어스타일 플랫폼",
       company: "SSAFY",
       period: "2025.04 ~ 2025.05",
       description: [
